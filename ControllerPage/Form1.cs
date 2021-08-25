@@ -50,6 +50,7 @@ namespace ControllerPage
         public Thread stop_5min_thread;
 
         bool bool_check_error = false;
+        bool bool_checksum_error = false;
         bool bool_stop_click = false;
         int blink_timer;
 
@@ -335,6 +336,7 @@ namespace ControllerPage
         }
         private void Btn_Check_Click(object sender, EventArgs e)
         {
+            Btn_Check.Enabled = false;
             if (Button_Interface.Text != "RS-232" && Button_Interface.Text != "RS-485")
             {
                 MessageBox.Show("Please Pick Interface " + Button_Interface.Text, application_name);
@@ -698,6 +700,7 @@ namespace ControllerPage
             fixed_time_timer_stop = false;
             bool_check_error = false;
             bool_stop_click = false;
+            bool_checksum_error = false;
             //database parameter
 
             // Button input
@@ -720,6 +723,7 @@ namespace ControllerPage
             ButtonWaitingTime.Enabled = false;
             // diaktifan ketika ganti combobox_moe
 
+            
             Btn_Start.Enabled = false;
             Btn_Stop.Enabled = false;
             Btn_CheckTemp.Enabled = false;
@@ -1525,7 +1529,7 @@ namespace ControllerPage
                                             Result_Parsing = Result_Parsing.Replace(s, "");
                                         }
 
-                                        /*
+                                        
                                         #region compare checksum
 
                                         string checksum_parsing = Measure.Substring(5, 2);
@@ -1536,18 +1540,9 @@ namespace ControllerPage
                                         Console.WriteLine("checksum_parsing adalah: " + checksum_parsing);
                                         Console.WriteLine("checksum_result adalah: " + checksum_result);
 
-                                        if (checksum_result)
+                                        if (!checksum_result)
                                         {
-                                            aggregate_cond = false;
-                                            Measure_Cond = false;
-                                            countingbatch = false;
-                                            bool_check_error = true;
-                                            Console.WriteLine("MyTimerStop");
-                                            
-                                            Sensor_input_Helper.Update_ErrorCode(Sensor_input_Helper.GetLocalIPAddress(), batch_id, "030");
-                                            MessageBox.Show(this, "Error-030", application_name);
-
-
+                                            bool_checksum_error = true;
                                         }
 
                                         // 2-4 nilai 
@@ -1556,7 +1551,7 @@ namespace ControllerPage
 
                                         #endregion
                                         // Data cleansing
-                                        */
+                                        
 
                                         Result_Parsing = String.Concat(Result_Parsing.Substring(0, Result_Parsing.Length - 1)
                                                 , ".", Result_Parsing.Substring(Result_Parsing.Length - 1, 1));
@@ -1583,6 +1578,21 @@ namespace ControllerPage
                                     {
                                         Console.WriteLine("R");
                                     }
+
+
+                                }
+
+                                // Checksum test
+                                if (bool_checksum_error == true)
+                                {
+                                    aggregate_cond = false;
+                                    Measure_Cond = false;
+                                    countingbatch = false;
+                                    bool_check_error = true;
+                                    Console.WriteLine("MyTimerStop");
+
+                                    Sensor_input_Helper.Update_ErrorCode(Sensor_input_Helper.GetLocalIPAddress(), batch_id, "030");
+                                    MessageBox.Show(this, "Error-030, Error during checksum ", application_name);
 
 
                                 }
