@@ -69,7 +69,10 @@ namespace ControllerPage
 
         private void button_TheresholdApply_Click(object sender, EventArgs e)
         {
-            if (double.Parse(button_thereshold_maxvalue.Text) > 40 || double.Parse(button_thereshold_minvalue.Text) < 11)
+            string minvalue_str = button_thereshold_minvalue.Text.Remove(button_thereshold_minvalue.Text.Length - 1, 1);
+            string maxvalue_str = button_thereshold_maxvalue.Text.Remove(button_thereshold_maxvalue.Text.Length - 1, 1);
+
+            if (double.Parse(maxvalue_str) > 40 || double.Parse(minvalue_str) < 11)
             {
                 MessageBox.Show("Thereshold Range is 11% to 40%");
             }
@@ -87,10 +90,10 @@ namespace ControllerPage
                 Sensor_input_Helper.Update_DataConfig(Sensor_input_Helper.GetLocalIPAddress(), "Thereshold_Enable"
                     , value_theresholdenable.ToString());
                 Sensor_input_Helper.Update_DataConfig(Sensor_input_Helper.GetLocalIPAddress(), "Thereshold_Max"
-                    , button_thereshold_maxvalue.Text);
+                    , maxvalue_str);
 
                 Sensor_input_Helper.Update_DataConfig(Sensor_input_Helper.GetLocalIPAddress(), "Thereshold_Min"
-                    , button_thereshold_minvalue.Text);
+                    , minvalue_str);
 
                 this.Close();
 

@@ -36,7 +36,7 @@ namespace ControllerPage.Helper
 
         public static string GetLocalIPAddress()
         {
-            ///return "192.168.0.5";
+            return "192.168.0.8";
 
             var host = Dns.GetHostEntry(Dns.GetHostName());
 
@@ -51,6 +51,8 @@ namespace ControllerPage.Helper
         }
         public static string GetLocalIPAddress2()
         {
+            return "192.168.0.8";
+
             var host = Dns.GetHostEntry(Dns.GetHostName());
             foreach (var ip in host.AddressList)
             {

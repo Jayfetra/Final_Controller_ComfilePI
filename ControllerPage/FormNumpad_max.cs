@@ -34,7 +34,11 @@ namespace ControllerPage
 
         private void button_del_Click(object sender, EventArgs e)
         {
-            textBox_numpad_window_max.Text = textBox_numpad_window_max.Text.Remove(textBox_numpad_window_max.Text.Length - 1, 1);
+            if (textBox_numpad_window_max.Text.Length > 0)
+            {
+                textBox_numpad_window_max.Text = textBox_numpad_window_max.Text.Remove(textBox_numpad_window_max.Text.Length - 1, 1);
+            }
+            
         }
         #region inputnumpad
         private void button_1_Click(object sender, EventArgs e)
@@ -108,7 +112,7 @@ namespace ControllerPage
         {
             //FormThereshold_Temp.button_thereshold_maxvalue.Text = textBox_numpad_window_max.Text;
             //this.Close();
-            FormThereshold_Temp.button_thereshold_maxvalue.Text = textBox_numpad_window_max.Text;
+            FormThereshold_Temp.button_thereshold_maxvalue.Text = string.Format("{0:0}", textBox_numpad_window_max.Text);
             numpad_max = textBox_numpad_window_max.Text;
             this.DialogResult = DialogResult.OK;
 

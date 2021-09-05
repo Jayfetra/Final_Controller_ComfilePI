@@ -83,9 +83,9 @@ namespace ControllerPage
             // 
             this.button_thereshold_maxvalue.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button_thereshold_maxvalue.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_thereshold_maxvalue.Location = new System.Drawing.Point(262, 225);
+            this.button_thereshold_maxvalue.Location = new System.Drawing.Point(243, 225);
             this.button_thereshold_maxvalue.Name = "button_thereshold_maxvalue";
-            this.button_thereshold_maxvalue.Size = new System.Drawing.Size(94, 53);
+            this.button_thereshold_maxvalue.Size = new System.Drawing.Size(132, 53);
             this.button_thereshold_maxvalue.TabIndex = 9;
             this.button_thereshold_maxvalue.Text = "12";
             this.button_thereshold_maxvalue.UseVisualStyleBackColor = true;
@@ -149,9 +149,9 @@ namespace ControllerPage
             // 
             this.button_thereshold_minvalue.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button_thereshold_minvalue.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_thereshold_minvalue.Location = new System.Drawing.Point(262, 156);
+            this.button_thereshold_minvalue.Location = new System.Drawing.Point(243, 156);
             this.button_thereshold_minvalue.Name = "button_thereshold_minvalue";
-            this.button_thereshold_minvalue.Size = new System.Drawing.Size(94, 48);
+            this.button_thereshold_minvalue.Size = new System.Drawing.Size(132, 48);
             this.button_thereshold_minvalue.TabIndex = 8;
             this.button_thereshold_minvalue.Text = "10";
             this.button_thereshold_minvalue.UseVisualStyleBackColor = true;

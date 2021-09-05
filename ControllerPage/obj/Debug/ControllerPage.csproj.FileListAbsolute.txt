@@ -484,3 +484,4 @@ C:\Users\Ignatius Albert\Source\Repos\Final_Controller_ComfilePI_Ver1.10\Control
 C:\Users\Ignatius Albert\Source\Repos\Final_Controller_ComfilePI_Ver1.10\ControllerPage\obj\Debug\ControllerPage.csproj.CopyComplete
 C:\Users\Ignatius Albert\Source\Repos\Final_Controller_ComfilePI_Ver1.10\ControllerPage\obj\Debug\ControllerPage.exe
 C:\Users\Ignatius Albert\Source\Repos\Final_Controller_ComfilePI_Ver1.10\ControllerPage\obj\Debug\ControllerPage.pdb
+D:\Git Project\Final_UI_Controller\comfilepicontroller-080821\Final_Controller_ComfilePI\ControllerPage\obj\Debug\ControllerPage.csprojAssemblyReference.cache

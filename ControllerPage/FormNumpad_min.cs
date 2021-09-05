@@ -37,7 +37,11 @@ namespace ControllerPage
 
         private void button_del_Click(object sender, EventArgs e)
         {
-            textBox_numpad_window_min.Text = textBox_numpad_window_min.Text.Remove(textBox_numpad_window_min.Text.Length - 1, 1);
+            if (textBox_numpad_window_min.Text.Length > 0)
+            {
+                textBox_numpad_window_min.Text = textBox_numpad_window_min.Text.Remove(textBox_numpad_window_min.Text.Length - 1, 1);
+            }
+
         }
 
         private void button_1_Click(object sender, EventArgs e)
@@ -109,7 +113,7 @@ namespace ControllerPage
 
         private void button_ENT_Click(object sender, EventArgs e)
         {
-            FormThereshold_Temp.button_thereshold_minvalue.Text = textBox_numpad_window_min.Text;
+            FormThereshold_Temp.button_thereshold_minvalue.Text = string.Format("{0:0}", textBox_numpad_window_min.Text);
             numpad_min = textBox_numpad_window_min.Text;
             this.DialogResult = DialogResult.OK;
 
